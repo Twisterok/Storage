@@ -10,8 +10,8 @@ class Exception: public exception
 	string			errDescription;
     ErrorType	    errCode;
 public:
-	Exception(ErrorType err,string description) : exception(), errCode(err), errDescription(description) {}
-	virtual const char* what() const throw()
+	Exception(ErrorType err, const string& description) : exception(), errCode(err), errDescription(description) {}
+	virtual const char* what() const throw() override
 	{
 	    return errDescription.c_str();
 	}
